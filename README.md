@@ -1,11 +1,14 @@
 # TIMA WEB
 
-This repository is initialized for development.
+This repository is a TypeScript monorepo for a Church Management System (ChMS).
 
 - Default branch: `main`
-- Git initialized in this folder
+- Monorepo: frontend (React+TS+Tailwind), backend (Express+TS+Mongo), shared types
+- See `docs/` for product scope, architecture, data model, roadmap, and runbooks
 
-Next steps:
-- Decide the tech stack (e.g., Node, Python, etc.)
-- Add project files and structure
-- Connect to a remote (GitHub/GitLab) and push
+Getting Started
+- Install pnpm and Node 20+
+- See `docs/runbook-local-dev.md` for local setup
+
+Deployment
+- Frontend to Vercel, Backend to Render/AWS (see `docs/deploy.md`)

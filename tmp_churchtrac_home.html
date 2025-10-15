@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+		<title>ChurchTrac - Church Management Software for Small and Large Churches</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="icon" href="/images/icons/icon152.png" type="image/png">
+		<link rel="apple-touch-icon" href="/images/icons/icon152.png">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta charset="utf-8">
+
+					<script type="text/javascript">var lang = {};</script>
+		<meta name="description" content="The most user-friendly and affordable church software to track online giving, accounting, membership, child check-in, visitors, small groups, events, volunteers, attendance and more.">		<script src="https://www.churchtrac.com/vendor/jquery/jquery-3.3.1.min.js"></script>
+				<link rel="stylesheet" href="https://www.churchtrac.com/vendor/bootstrap/css/bootstrap.min.css"/>
+		<script src="https://www.churchtrac.com/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+				<link rel="stylesheet" href="https://www.churchtrac.com/vendor/fontawesome/css/all.min.css?v=20251015175939"/>
+				<link rel="stylesheet" href="https://www.churchtrac.com/libraries/css/style.css"/>
+				<script type="text/javascript" src="https://www.churchtrac.com/vendor/bootbox/bootbox.min.js?20251015v" defer></script>
+				<script type="text/javascript" src="https://www.churchtrac.com/vendor/toastr/toastr.min.js?20251015v"></script>
+		<link rel="stylesheet" type="text/css" href="https://www.churchtrac.com/vendor/toastr/toastr.min.css?20251015v" />
+		
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="author" content="ChurchTrac Software, Inc.">
+<meta name="copyright" content="ChurchTrac Software, Inc.">
+<meta name="company" content="ChurchTrac Software, Inc.">
+<meta name="rating" content="general">
+<meta name="distribution" content="global">
+<meta name="keywords" content="ChurchTrac, church software, membership software, free software, management, attendance, contributions, church management, church accounting">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="robots" content="all">
+<meta name="google-site-verification" content="p2CraeZGseojR-p4xTe92FDQoHza-xzS3ORtsxNc2rA" />
+<meta name="google-site-verification" content="6R-G0aiaJfIaBGmE27t3MSuBB2m_UzXuGTiA9Nn4Srk" />
+
+<link rel="canonical" href="https://www.churchtrac.com/index">
+
+<meta property="og:site_name" content="ChurchTrac" />
+<meta property="og:title" content="ChurchTrac Church Software" />
+<meta property="og:image" content="https://www.churchtrac.com/images/landing/homepage/hero3.png?20201215" />
+
+</head>
+
+<body>
+
+
+<!-- START NAVIGATION -->
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light py-3 fixed-top" style="background-color: rgba(255,255,255,0.9); backdrop-filter: blur(8px);">
+	<div class="container-fluid">
+
+		<!-- LOGO -->
+		<a class="navbar-brand navbar-brand-lgx d-inline" href="/index">
+			<img class="logo" style="width:255px;" src="https://www.churchtrac.com/images/landing/ct-logo-color-lower.png" alt="ChurchTrac Logo">
+		</a>
+
+		<!-- RESPONSIVE TOGGLER MENU -->
+
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<!-- NAV LINKS -->
+
+			<div id="main-navbar" class="collapse navbar-collapse justify-content-end">
+				<ul class="navbar-nav">
+
+					<li class="nav-item dropdown pt-3 pt-lg-0 d-none d-lg-block">
+						<a class="nav-link pr-5 dropdown-toggle text-primary" href="javascript:;" style="font-size:1.1rem;" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Help & Resources
+						</a>
+						<div class="dropdown-menu p-0" id="navbarDropdown" aria-labelledby="navbarDropdown" style="font-size:1.2rem;">
+															<a class="dropdown-item pointer text-primary py-3 border-bottom " href="/support" >
+									<i class="fal fa-question-circle" style="width:30px;"></i><b>Get Support</b>
+									<div class="small" style="padding-left:30px;">Browse answers, or connect with our team</div>
+								</a>
+															<a class="dropdown-item pointer text-primary py-3 border-bottom " href="https://www.youtube.com/channel/UC0dQtQ1X6jAqHmoMxSr6GUw" target="_blank">
+									<i class="fal fa-film" style="width:30px;"></i><b>Watch our Videos</b>
+									<div class="small" style="padding-left:30px;">Watch our tutorials and live streams</div>
+								</a>
+															<a class="dropdown-item pointer text-primary py-3 border-bottom " href="/articles/page/1" >
+									<i class="fal fa-th" style="width:30px;"></i><b>Read the Blog</b>
+									<div class="small" style="padding-left:30px;">News, tips and the latest happenings</div>
+								</a>
+															<a class="dropdown-item pointer text-primary py-3 border-bottom " href="/about_us" >
+									<i class="fal fa-snowflake" style="width:30px;"></i><b>Hear Our Story</b>
+									<div class="small" style="padding-left:30px;">The 9 things that make us unique</div>
+								</a>
+															<a class="dropdown-item pointer text-primary py-3 border-bottom d-block d-lg-none" href="/pricing" >
+									<i class="fal " style="width:30px;"></i><b>Explore Plans & Pricing</b>
+									<div class="small" style="padding-left:30px;"></div>
+								</a>
+													</div>
+					</li>
+
+					<li class="nav-item d-none d-lg-block">
+						<a class="nav-link pr-5 text-primary" style="font-size:1.1rem;" href="/pricing">Pricing</a>
+					</li>
+
+					<div class="d-block d-lg-none list-group mt-4 mb-3" style="font-size:1.1rem;">
+													<a class="pointer nav-item list-group-item pointer text-primary py-3 border-bottom " href="/support"  style="text-decoration:none;">
+								<i class="fal fa-question-circle" style="width:30px;"></i><b>Get Support</b>
+								<div class="small" style="padding-left:30px;">Browse answers, or connect with our team</div>
+							</a>
+													<a class="pointer nav-item list-group-item pointer text-primary py-3 border-bottom " href="https://www.youtube.com/channel/UC0dQtQ1X6jAqHmoMxSr6GUw" target="_blank" style="text-decoration:none;">
+								<i class="fal fa-film" style="width:30px;"></i><b>Watch our Videos</b>
+								<div class="small" style="padding-left:30px;">Watch our tutorials and live streams</div>
+							</a>
+													<a class="pointer nav-item list-group-item pointer text-primary py-3 border-bottom " href="/articles/page/1"  style="text-decoration:none;">
+								<i class="fal fa-th" style="width:30px;"></i><b>Read the Blog</b>
+								<div class="small" style="padding-left:30px;">News, tips and the latest happenings</div>
+							</a>
+													<a class="pointer nav-item list-group-item pointer text-primary py-3 border-bottom " href="/about_us"  style="text-decoration:none;">
+								<i class="fal fa-snowflake" style="width:30px;"></i><b>Hear Our Story</b>
+								<div class="small" style="padding-left:30px;">The 9 things that make us unique</div>
+							</a>
+													<a class="pointer nav-item list-group-item pointer text-primary py-3 border-bottom d-block d-lg-none" href="/pricing"  style="text-decoration:none;">
+								<i class="fal " style="width:30px;"></i><b>Explore Plans & Pricing</b>
+								<div class="small" style="padding-left:30px;"></div>
+							</a>
+											</div>
+
+				</ul>
+				<div class="d-flex flex-column flex-sm-row align-items-center">
+					<a href="/login" style="font-size:1.1rem;" class="w-100 pointer btn btn-default btn-round nav-button px-5 px-lg-3 mr-lg-2 mb-1">Login</a>
+					<div class="px-0 px-sm-1"></div>
+					<a href="/signup" style="font-size:1.1rem;" class="w-100 pointer btn btn-tangerine btn-round nav-button px-5 px-lg-3 text-nowrap mb-1">Start For Free</a>
+				</div>
+			</div>
+		
+	</div>
+</nav>
+<!-- END NAVIGATION -->
+
+
+<div class="position-absolute d-none d-md-flex flex-row flex-nowrap px-5" style="width:100%; max-width:98vw; left:0px; top:100px;"><img src="/images/landing/hex-blue.png" alt="" class="flex-fill hex-animate position-relative d-none d-md-inline" style="padding: 0 3%; width:20%; height:20%; top:159px; transform: rotate(2deg); animation-delay:-25s;"><img src="/images/landing/hex-tangerine.png" alt="" class="flex-fill hex-animate position-relative d-none d-md-inline" style="padding: 0 3%; width:17%; height:17%; top:87px; transform: rotate(19deg); animation-delay:-22s;"><img src="/images/landing/hex-blue.png" alt="" class="flex-fill hex-animate position-relative d-none d-md-inline" style="padding: 0 3%; width:9%; height:9%; top:127px; transform: rotate(3deg); animation-delay:-13s;"><img src="/images/landing/hex-tangerine.png" alt="" class="flex-fill hex-animate position-relative d-none d-md-inline" style="padding: 0 3%; width:20%; height:20%; top:85px; transform: rotate(0deg); animation-delay:-11s;"><img src="/images/landing/hex-blue.png" alt="" class="flex-fill hex-animate position-relative d-none d-md-inline" style="padding: 0 3%; width:9%; height:9%; top:162px; transform: rotate(5deg); animation-delay:-12s;"></div>
+<script>
+$(document).on('scroll', function() {
+	const $navbar = $('#navbar');
+	if ($(window).scrollTop() > 15) {
+		$navbar.addClass('scrolled');
+	} else {
+		$navbar.removeClass('scrolled');
+	}
+});
+</script>
+<!-- START HERO SECTION -->
+
+<div class="container banner-top d-flex flex-column" style="min-height: 630px;">
+
+	<div class="d-flex flex-column flex-lg-row align-items-center">
+
+		<div class="w-100 text-left mx-auto mb-3 flex-fill">
+
+			<h1 class="pt-5 text-center text-lg-left">
+				Ministry is challenging.<br/>
+				Your church software shouldn't be.
+			</h1>
+
+			<h2 class="my-3 subheading text-charcoal text-center text-lg-left">
+				Rated #1 out of over 130 church management software products, ChurchTrac delivers unmatched simplicity and affordability.
+			</h2>
+
+			<div class="mt-4 d-lg-flex d-none align-items-center justify-content-start">
+				<a href="/signup" class="px-5 btn btn-tangerine">Start a free trial&nbsp;<i class="ml-2 fas fa-arrow-circle-right mt-1"></i></a>
+				<a href="/support/getting_started/getting-started-livestream" class="px-4 ml-2 btn btn-default">Join a Live Demo&nbsp;<i class="ml-2 fas fa-arrow-circle-right mt-1"></i></a>
+			</div>
+			
+		</div>
+
+		<div class="w-75 flex-fill">
+			<div class="text-center d-flex flex-column align-items-center">
+				
+				<div class="image-dissolve">
+											<img class="w-auto h-100" src="/images/landing/homepage/landing_hero_1.webp" alt="">
+											<img class="w-auto h-100" src="/images/landing/homepage/landing_hero_2.webp" alt="">
+											<img class="w-auto h-100" src="/images/landing/homepage/landing_hero_3.webp" alt="">
+											<img class="w-auto h-100" src="/images/landing/homepage/landing_hero_4.webp" alt="">
+											<img class="w-auto h-100" src="/images/landing/homepage/landing_hero_5.webp" alt="">
+											<img class="w-auto h-100" src="/images/landing/homepage/landing_hero_6.webp" alt="">
+									</div>
+
+			</div>
+		</div>
+
+	</div>
+
+	<div class="d-flex flex-column flex-sm-row d-lg-none justify-content-center position-relative pt-4">
+		<a href="/signup" class="px-5 btn btn-tangerine">Start for free&nbsp;<i class="fas fa-arrow-circle-right mt-1"></i></a>
+		<div class="px-1"></div>
+		<a href="/support/getting_started/getting-started-livestream" class="px-4 btn btn-default mt-1">Join a Live Demo&nbsp;<i class="ml-2 fas fa-arrow-circle-right mt-1"></i></a>
+	</div>
+
+	<div class="pt-5">
+		<h2 class="justify-content-center text-center mb-0 subheading text-muted">Trusted by over 12,000 churches just like yours</h2>
+		<div class="horizontal-scroller pt-3">
+			<div class="horizontal-scroller-content">
+				<img alt="church_logos" aria-hidden="true" src="/images/landing/homepage/churches/logos.webp">
+				<img alt="church_logos" aria-hidden="true" src="/images/landing/homepage/churches/logos.webp">
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<!-- END BANNER SECTION -->
+<section class="container py-5 px-3 px-md-5 text-center mt-5x scroll-animation">
+
+	<h2 class="text-center text-success rotating-text mb-2 scroll-animation">
+		Your church doesn't need a ton of apps.
+	</h2>
+	<h3 class="text-center text-muted mb-4 scroll-animation">
+		See how thousands of church leaders have found a simpler way with ChurchTrac.
+	</h3>
+
+	<div class="scroll-animation shadow mb-5 embed-responsive embed-responsive-16by9 mx-auto rounded" style="width:100%; max-width:900px;">
+		<iframe src="https://player.vimeo.com/video/848390717?badge=0autopause=0&player_id=0&app_id=58479"
+		frameborder="0" allow="picture-in-picture" allowfullscreen class="rounded"
+		style="position:absolute;top:0;left:0;width:100%;height:100%;" title=""></iframe>
+	</div>
+
+</section>
+<section class="container-fluid px-2 py-6 px-md-5">
+
+	<div class="d-flex justify-content-center my-4 pt-3 scroll-animation">
+			<div class="badge-rounded">
+					<div class="badge-text"><i class="far fa-lightbulb mr-2"></i>Benefits</div>
+			</div>
+	</div>
+
+	<h2 class="text-center text-success scroll-animation">
+		All your church tools in one simple app
+	</h2>
+	<h3 class="text-center mb-5 text-charcoal scroll-animation delay-200">
+		Save time, save money, and focus on what matters most.
+	</h3>
+
+	<div class="container d-flex flex-column flex-xl-row" style="max-width: 1140px; gap: 1.5rem;">
+
+		<div class="column-left d-flex flex-nowrap flex-column w-100 scroll-animation" style="gap: 1.5rem;">
+		 
+			<div class="card border benefit-card scroll-animation p-4" style="background-image: radial-gradient(circle, var(--color-blue-medium), var(--color-blue-dark) 90%); height: 375px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+				<img src="/images/landing/homepage/benefits/benefits_box_1.webp" class="mb-2" style="width: 300px;" />
+				<h3 class="card-title text-white text-center" style="text-shadow: 1px 1px 2px var(--color-blue-dark);">
+					Replace multiple costly subscriptions with one simple ChMS for your entire church.
+				</h3>
+			</div>
+
+			<div class="d-flex flex-column flex-md-row wrap-wrap w-100" style="gap: 1.5rem;">
+
+				<div class="bg-blue-very-light h6 m-0 card border rounded w-100 h-100 p-5 d-flex flex-row align-items-center text-success" style="max-height:165px;">
+					<i class="fal fa-lock fa-2x pr-3"></i>
+					Secure church database
+				</div>
+
+				<div class="bg-blue-very-light h6 m-0 card border rounded w-100 h-100 p-5 d-flex flex-row align-items-center text-success" style="max-height:165px;">
+					<i class="fal fa-sitemap fa-2x pr-3"></i>
+					Keep your ministry organized
+				</div>
+
+			</div>
+
+			<div class="card border benefit-card scroll-animation bg-tangerine-light delay-200" style="height: 275px;">
+				<div class="d-flex align-items-center justify-content-center p-4 text-success">
+					<i class="fal fa-5x fa-piggy-bank mr-4"></i>
+					<h4 class="card-title pt-3" style="font-size: 2rem; font-weight: 550; line-height: 2rem;">Affordable for churches<br/>of all sizes.</h4>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="column-right d-flex flex-nowrap flex-column w-100 scroll-animation delay-600" style="gap: 1.5rem;">
+
+			<div class="card border benefit-card scroll-animation bg-tangerine-light" style="height: 275px;">
+				<div class="d-flex align-items-center justify-content-center p-4 text-success">
+					<i class="fal fa-5x fa-comments mr-4"></i>
+					<h4 class="card-title pt-2" style="font-size: 1.75rem; font-weight: 550; line-height: 2rem;">Engage members.<br/>Simplify communication.</h4>
+				</div>
+			</div>
+
+			<div class="d-flex flex-column flex-md-row" style="gap: 1.5rem;">
+
+				<div class="bg-blue-very-light h6 m-0 card border rounded w-100 h-100 p-5 d-flex flex-row align-items-center text-success" style="max-height:165px;">
+					<i class="fal fa-rocket fa-2x pr-3"></i>
+					Automate church admin tasks
+				</div>
+
+				<div class="bg-blue-very-light h6 m-0 card border rounded w-100 flex-grow-1 h-100 p-5 d-flex flex-row align-items-center text-success" style="max-height:165px;">
+					<i class="fal fa-calendar fa-2x pr-3"></i>
+					Simplify event planning and attendance
+				</div>
+
+			</div>
+
+			<div class="card border benefit-card scroll-animation delay-400 justify-content-end text-white p-4 pl-5" style="background: url('/images/landing/homepage/benefits/finances.webp') center/cover; height: 375px;">
+				<div class="d-flex flex-row">
+					<i class="fal fa-4x fa-calculator-alt mb-3 mr-3"></i>
+					<i class="fal fa-4x fa-money-check mb-3 mr-3"></i>
+				</div>
+				<h3 class="card-title" style="text-shadow: 1px 1px 2px black;">Simplify church finances—easier than QuickBooks, better than spreadsheets</h3>
+			</div>
+
+		</div>
+
+	</div>
+
+</section>
+
+<section id="leader-roles" class="container-fluid p-md-5 mb-5 mb-md-2 mt-5">
+
+	<div class="container text-center">
+		<div class="d-flex justify-content-center my-4 scroll-animation">
+			<div class="badge-rounded">
+				<div class="badge-text"><i class="far fa-user-hard-hat mr-2"></i>Solutions</div>
+			</div>
+		</div>
+		<h2 class="mb-2 scroll-animation text-success">Software for every church leader</h2>
+		<h3 class="text-center scroll-animation mb-5 text-charcoal">Equipping pastors, admins, and volunteers with tools tailored to their roles.</h3>
+		<div class="card-grid text-center">
+							<div class="card pointer border rounded p-0 scroll-animation" style="cursor: default; height:250px; background: linear-gradient(to bottom, transparent 55%, #333), url(/images/landing/homepage/leaders/pastor-1.webp) no-repeat center scroll; background-size: cover;">
+					<div class="card-body p-0 w-100 h-100">
+						<div class="d-flex flex-column justify-content-end h-100 p-3">
+							<div class="card-text text-left mb-3">
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal">Record notes</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Look up people</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Text members</span>
+										</div>
+															</div>
+							<h4 class="card-title mt-3 h4 mb-0 text-white mb-2" style="font-weight:550;">Senior Pastor</h4>
+						</div>
+					</div>
+				</div>
+							<div class="card pointer border rounded p-0 scroll-animation" style="cursor: default; height:250px; background: linear-gradient(to bottom, transparent 55%, #333), url(/images/landing/homepage/leaders/admin-2.webp) no-repeat center scroll; background-size: cover;">
+					<div class="card-body p-0 w-100 h-100">
+						<div class="d-flex flex-column justify-content-end h-100 p-3">
+							<div class="card-text text-left mb-3">
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal">Manage church database</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Calendar & reports</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Organize events</span>
+										</div>
+															</div>
+							<h4 class="card-title mt-3 h4 mb-0 text-white mb-2" style="font-weight:550;">Church Admin</h4>
+						</div>
+					</div>
+				</div>
+							<div class="card pointer border rounded p-0 scroll-animation" style="cursor: default; height:250px; background: linear-gradient(to bottom, transparent 55%, #333), url(/images/landing/homepage/leaders/treasurer-1.webp) no-repeat center scroll; background-size: cover;">
+					<div class="card-body p-0 w-100 h-100">
+						<div class="d-flex flex-column justify-content-end h-100 p-3">
+							<div class="card-text text-left mb-3">
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal">Track church finances</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Create budgets</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Manage funds</span>
+										</div>
+															</div>
+							<h4 class="card-title mt-3 h4 mb-0 text-white mb-2" style="font-weight:550;">Church Treasurer</h4>
+						</div>
+					</div>
+				</div>
+							<div class="card pointer border rounded p-0 scroll-animation" style="cursor: default; height:250px; background: linear-gradient(to bottom, transparent 55%, #333), url(/images/landing/homepage/leaders/worship-1.webp) no-repeat center scroll; background-size: cover;">
+					<div class="card-body p-0 w-100 h-100">
+						<div class="d-flex flex-column justify-content-end h-100 p-3">
+							<div class="card-text text-left mb-3">
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal">Plan services</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Schedule team</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Manage songs</span>
+										</div>
+															</div>
+							<h4 class="card-title mt-3 h4 mb-0 text-white mb-2" style="font-weight:550;">Worship Leader</h4>
+						</div>
+					</div>
+				</div>
+							<div class="card pointer border rounded p-0 scroll-animation" style="cursor: default; height:250px; background: linear-gradient(to bottom, transparent 55%, #333), url(/images/landing/homepage/leaders/kids-1.webp) no-repeat center scroll; background-size: cover;">
+					<div class="card-body p-0 w-100 h-100">
+						<div class="d-flex flex-column justify-content-end h-100 p-3">
+							<div class="card-text text-left mb-3">
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal">Child Check-In</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Schedule volunteers</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Print labels</span>
+										</div>
+															</div>
+							<h4 class="card-title mt-3 h4 mb-0 text-white mb-2" style="font-weight:550;">Kid's Ministry</h4>
+						</div>
+					</div>
+				</div>
+							<div class="card pointer border rounded p-0 scroll-animation" style="cursor: default; height:250px; background: linear-gradient(to bottom, transparent 55%, #333), url(/images/landing/homepage/leaders/comm-1.webp) no-repeat center scroll; background-size: cover;">
+					<div class="card-body p-0 w-100 h-100">
+						<div class="d-flex flex-column justify-content-end h-100 p-3">
+							<div class="card-text text-left mb-3">
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal">Church website</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Texting/email</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Registrations</span>
+										</div>
+															</div>
+							<h4 class="card-title mt-3 h4 mb-0 text-white mb-2" style="font-weight:550;">Communications</h4>
+						</div>
+					</div>
+				</div>
+							<div class="card pointer border rounded p-0 scroll-animation" style="cursor: default; height:250px; background: linear-gradient(to bottom, transparent 55%, #333), url(/images/landing/homepage/leaders/groups-3.webp) no-repeat center scroll; background-size: cover;">
+					<div class="card-body p-0 w-100 h-100">
+						<div class="d-flex flex-column justify-content-end h-100 p-3">
+							<div class="card-text text-left mb-3">
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal">View discipleship growth</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Track spiritual gifts</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Receive prayer requests</span>
+										</div>
+															</div>
+							<h4 class="card-title mt-3 h4 mb-0 text-white mb-2" style="font-weight:550;">Pastoral Staff</h4>
+						</div>
+					</div>
+				</div>
+							<div class="card pointer border rounded p-0 scroll-animation" style="cursor: default; height:250px; background: linear-gradient(to bottom, transparent 55%, #333), url(/images/landing/homepage/leaders/groups-2.webp) no-repeat center scroll; background-size: cover;">
+					<div class="card-body p-0 w-100 h-100">
+						<div class="d-flex flex-column justify-content-end h-100 p-3">
+							<div class="card-text text-left mb-3">
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal">Church website</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Mass texting & email</span>
+										</div>
+																		<div class="badge-rounded small mb-2 w-100" style="background-color: rgba(255,255,255,0.8); cursor: default!important;">
+											<i class="fas fa-check-circle text-success mr-2"></i>
+											<span class="badge-text text-charcoal"> Church forms</span>
+										</div>
+															</div>
+							<h4 class="card-title mt-3 h4 mb-0 text-white mb-2" style="font-weight:550;">Group Leader</h4>
+						</div>
+					</div>
+				</div>
+					</div>
+
+	</div>
+
+</section>
+
+
+<div class="container-fluid py-5 px-md-5 my-5" style="overflow-x: hidden;">
+
+	<div class="pb-5 my-4">
+
+		<div class="d-flex justify-content-center mt-4 scroll-animation">
+			<div class="badge-rounded px-5">
+				<div class="badge-text"><i class="far fa-tools mr-2"></i>Features</div>
+			</div>
+		</div>
+
+		<h1 class="mt-0 text-center rotating-text mb-4 mt-3 scroll-animation text-success" style="min-height:180px;">
+			<div class="mb-2 phrase-wrapped-text">Your all-in-one</div>
+			<div class="phrases">
+									<div class="phrase visible text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">church management</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">church accounting</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">worship planning</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">church messaging</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">volunteer management</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">event registration</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">church donation</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">check-in</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">group & attendance</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">church automation</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">team scheduling</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">church web site</div>
+					</div>
+									<div class="phrase  text-white px-3 d-flex justify-content-center">
+						<div class="bg-primary highlight">online & text giving</div>
+					</div>
+							</div>
+			<div class="mt-2 phrase-wrapped-text">software</div>
+		</h1>
+
+		<div class="p-0 py-md-1 card-container card-scroll-container text-success w-100" style="height:340px;">
+			<div class="card-scroll-wrapper px-md-5 py-3" style="overflow-y: hidden; min-height:340px;">
+									<div class="card border border-secondary card-scroll rounded mr-3 scroll-animation position-relative delay-200" style="background-color: var(--color-blue-very-light); width: 85%; max-width: 425px; min-height:365px; max-height:365px;">
+						<div class="card-body d-flex flex-column justify-content-start p-5 h-100">
+							<i class="fal fa-users fa-2x mb-3"></i>
+							
+							<div class="d-flex align-items-center justify-content-between">
+								<h3 class="card-title m-0 text-success bold" style="font-size: 1.75rem;">
+									People & member management								</h3>
+							</div>
+
+							<div class="badge-container mt-3 d-flex flex-column">
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Church directory</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Send mass email</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Text your church</div>
+									</div>
+															</div>
+							
+							<div class="position-absolute text-success d-flex flex-row" style="bottom:15px; right:20px;">
+								<a href="javascript:;" onclick="showVideo('1040799924')" data-toggle="tooltip" title="People video intro" class="text-white px-2 btn btn-tangerine mr-1">
+									<span class="fas fa-film fa-lg"></span>
+								</a>
+								<a href="/features_people" data-toggle="tooltip" title="Explore more people features" class="text-center px-2 ml-2 text-white btn bg-blue-dark card-scroll-features-btn">
+									<span class="pl-1 pr-1 text-white fas fa-chevron-right"></span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+									<div class="card border border-secondary card-scroll rounded mr-3 scroll-animation position-relative delay-400" style="background-color: var(--color-blue-very-light); width: 85%; max-width: 425px; min-height:365px; max-height:365px;">
+						<div class="card-body d-flex flex-column justify-content-start p-5 h-100">
+							<i class="fal fa-child fa-2x mb-3"></i>
+							
+							<div class="d-flex align-items-center justify-content-between">
+								<h3 class="card-title m-0 text-success bold" style="font-size: 1.75rem;">
+									Check-In and security								</h3>
+							</div>
+
+							<div class="badge-container mt-3 d-flex flex-column">
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Record allergies</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Print name tags</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Text parents</div>
+									</div>
+															</div>
+							
+							<div class="position-absolute text-success d-flex flex-row" style="bottom:15px; right:20px;">
+								<a href="javascript:;" onclick="showVideo('1040800510')" data-toggle="tooltip" title="Check-In video intro" class="text-white px-2 btn btn-tangerine mr-1">
+									<span class="fas fa-film fa-lg"></span>
+								</a>
+								<a href="/features_checkin" data-toggle="tooltip" title="Explore more checkin features" class="text-center px-2 ml-2 text-white btn bg-blue-dark card-scroll-features-btn">
+									<span class="pl-1 pr-1 text-white fas fa-chevron-right"></span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+									<div class="card border border-secondary card-scroll rounded mr-3 scroll-animation position-relative delay-600" style="background-color: var(--color-blue-very-light); width: 85%; max-width: 425px; min-height:365px; max-height:365px;">
+						<div class="card-body d-flex flex-column justify-content-start p-5 h-100">
+							<i class="fal fa-th-list fa-2x mb-3"></i>
+							
+							<div class="d-flex align-items-center justify-content-between">
+								<h3 class="card-title m-0 text-success bold" style="font-size: 1.75rem;">
+									Worship planning & scheduling								</h3>
+							</div>
+
+							<div class="badge-container mt-3 d-flex flex-column">
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Create Service Outlines</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Import from SongSelect</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Schedule teams</div>
+									</div>
+															</div>
+							
+							<div class="position-absolute text-success d-flex flex-row" style="bottom:15px; right:20px;">
+								<a href="javascript:;" onclick="showVideo('1040800682')" data-toggle="tooltip" title="Worship video intro" class="text-white px-2 btn btn-tangerine mr-1">
+									<span class="fas fa-film fa-lg"></span>
+								</a>
+								<a href="/features_worship" data-toggle="tooltip" title="Explore more worship features" class="text-center px-2 ml-2 text-white btn bg-blue-dark card-scroll-features-btn">
+									<span class="pl-1 pr-1 text-white fas fa-chevron-right"></span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+									<div class="card border border-secondary card-scroll rounded mr-3 scroll-animation position-relative delay-200" style="background-color: var(--color-blue-very-light); width: 85%; max-width: 425px; min-height:365px; max-height:365px;">
+						<div class="card-body d-flex flex-column justify-content-start p-5 h-100">
+							<i class="fal fa-browser fa-2x mb-3"></i>
+							
+							<div class="d-flex align-items-center justify-content-between">
+								<h3 class="card-title m-0 text-success bold" style="font-size: 1.75rem;">
+									Church Connect								</h3>
+							</div>
+
+							<div class="badge-container mt-3 d-flex flex-column">
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Free church website</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Church app / online giving</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Member portal</div>
+									</div>
+															</div>
+							
+							<div class="position-absolute text-success d-flex flex-row" style="bottom:15px; right:20px;">
+								<a href="javascript:;" onclick="showVideo('1040800820')" data-toggle="tooltip" title="Connect video intro" class="text-white px-2 btn btn-tangerine mr-1">
+									<span class="fas fa-film fa-lg"></span>
+								</a>
+								<a href="/features_connect" data-toggle="tooltip" title="Explore more connect features" class="text-center px-2 ml-2 text-white btn bg-blue-dark card-scroll-features-btn">
+									<span class="pl-1 pr-1 text-white fas fa-chevron-right"></span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+									<div class="card border border-secondary card-scroll rounded mr-3 scroll-animation position-relative delay-200" style="background-color: var(--color-blue-very-light); width: 85%; max-width: 425px; min-height:365px; max-height:365px;">
+						<div class="card-body d-flex flex-column justify-content-start p-5 h-100">
+							<i class="fal fa-donate fa-2x mb-3"></i>
+							
+							<div class="d-flex align-items-center justify-content-between">
+								<h3 class="card-title m-0 text-success bold" style="font-size: 1.75rem;">
+									Contributions and online giving								</h3>
+							</div>
+
+							<div class="badge-container mt-3 d-flex flex-column">
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Online donations</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Text giving</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Contribution statements</div>
+									</div>
+															</div>
+							
+							<div class="position-absolute text-success d-flex flex-row" style="bottom:15px; right:20px;">
+								<a href="javascript:;" onclick="showVideo('1040800984')" data-toggle="tooltip" title="Giving video intro" class="text-white px-2 btn btn-tangerine mr-1">
+									<span class="fas fa-film fa-lg"></span>
+								</a>
+								<a href="/features_giving" data-toggle="tooltip" title="Explore more giving features" class="text-center px-2 ml-2 text-white btn bg-blue-dark card-scroll-features-btn">
+									<span class="pl-1 pr-1 text-white fas fa-chevron-right"></span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+									<div class="card border border-secondary card-scroll rounded mr-3 scroll-animation position-relative delay-200" style="background-color: var(--color-blue-very-light); width: 85%; max-width: 425px; min-height:365px; max-height:365px;">
+						<div class="card-body d-flex flex-column justify-content-start p-5 h-100">
+							<i class="fal fa-money-check-edit fa-2x mb-3"></i>
+							
+							<div class="d-flex align-items-center justify-content-between">
+								<h3 class="card-title m-0 text-success bold" style="font-size: 1.75rem;">
+									Accounting and budgeting								</h3>
+							</div>
+
+							<div class="badge-container mt-3 d-flex flex-column">
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Bank syncing</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Create budgets</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Print checks</div>
+									</div>
+															</div>
+							
+							<div class="position-absolute text-success d-flex flex-row" style="bottom:15px; right:20px;">
+								<a href="javascript:;" onclick="showVideo('1040801431')" data-toggle="tooltip" title="Accounting video intro" class="text-white px-2 btn btn-tangerine mr-1">
+									<span class="fas fa-film fa-lg"></span>
+								</a>
+								<a href="/features_accounting" data-toggle="tooltip" title="Explore more accounting features" class="text-center px-2 ml-2 text-white btn bg-blue-dark card-scroll-features-btn">
+									<span class="pl-1 pr-1 text-white fas fa-chevron-right"></span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+									<div class="card border border-secondary card-scroll rounded mr-3 scroll-animation position-relative delay-200" style="background-color: var(--color-blue-very-light); width: 85%; max-width: 425px; min-height:365px; max-height:365px;">
+						<div class="card-body d-flex flex-column justify-content-start p-5 h-100">
+							<i class="fal fa-calendar-alt fa-2x mb-3"></i>
+							
+							<div class="d-flex align-items-center justify-content-between">
+								<h3 class="card-title m-0 text-success bold" style="font-size: 1.75rem;">
+									Calendar and attendance								</h3>
+							</div>
+
+							<div class="badge-container mt-3 d-flex flex-column">
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Event registrations</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Track attendance</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Manage calendar</div>
+									</div>
+															</div>
+							
+							<div class="position-absolute text-success d-flex flex-row" style="bottom:15px; right:20px;">
+								<a href="javascript:;" onclick="showVideo('1040801047')" data-toggle="tooltip" title="Event video intro" class="text-white px-2 btn btn-tangerine mr-1">
+									<span class="fas fa-film fa-lg"></span>
+								</a>
+								<a href="/features_events" data-toggle="tooltip" title="Explore more event features" class="text-center px-2 ml-2 text-white btn bg-blue-dark card-scroll-features-btn">
+									<span class="pl-1 pr-1 text-white fas fa-chevron-right"></span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+									<div class="card border border-secondary card-scroll rounded mr-3 scroll-animation position-relative delay-200" style="background-color: var(--color-blue-very-light); width: 85%; max-width: 425px; min-height:365px; max-height:365px;">
+						<div class="card-body d-flex flex-column justify-content-start p-5 h-100">
+							<i class="fal fa-lightbulb-exclamation fa-2x mb-3"></i>
+							
+							<div class="d-flex align-items-center justify-content-between">
+								<h3 class="card-title m-0 text-success bold" style="font-size: 1.75rem;">
+									Automate admin tasks								</h3>
+							</div>
+
+							<div class="badge-container mt-3 d-flex flex-column">
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Automate tasks</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Send reports</div>
+									</div>
+																	<div class="pr-4">
+										<i class="fas fa-check-circle text-success mr-2"></i>
+										<div class="badge-text d-inline flex-wrap" style="white-space: wrap!important;">Message your church</div>
+									</div>
+															</div>
+							
+							<div class="position-absolute text-success d-flex flex-row" style="bottom:15px; right:20px;">
+								<a href="javascript:;" onclick="showVideo('1040801125')" data-toggle="tooltip" title="Automation video intro" class="text-white px-2 btn btn-tangerine mr-1">
+									<span class="fas fa-film fa-lg"></span>
+								</a>
+								<a href="/features_automations" data-toggle="tooltip" title="Explore more automation features" class="text-center px-2 ml-2 text-white btn bg-blue-dark card-scroll-features-btn">
+									<span class="pl-1 pr-1 text-white fas fa-chevron-right"></span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+							</div>
+			<div class="d-flex align-items-center float-right mt-3 mb-5 scroll-animation">
+				<div id="left-arrow" class="btn btn-sm card-scroll-arrow mr-2"><i class="fas fa-chevron-left mr-1 mt-1"></i></div>
+				<div id="right-arrow" class="btn btn-sm card-scroll-arrow ml-3"><i class="fas fa-chevron-right ml-1 mt-1"></i></div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+</div>
+<section class="container py-5">
+
+	<div class="d-flex flex-column flex-lg-row py-5">
+
+		<div id="service-highlights" class="order-2 order-lg-1 scroll-animation w-100 row no-gutters px-3 px-md-5 px-lg-3" style="gap:0;">
+
+			<div class="col-6 col-md-4 col-lg-6 order-lg-1 order-md-1">
+				<div class="card border border-secondary rounded">
+					<img src="/images/landing/homepage/support1.webp" class="card-img-top rounded" style="object-fit: cover;">
+				</div>
+			</div>
+
+			<div class="col-6 col-md-4 col-lg-6 order-lg-2 order-md-2">
+				<div class="card border border-secondary rounded">
+						<div class="card-body h-100 d-flex flex-column justify-content-center">
+							<div class="card-title text-success text-center h2 mb-0">< 1h</div>
+						<h6 class="card-text text-center">Response Time</h6>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6 col-md-4 col-lg-6 order-lg-3 order-md-4">
+				<div class="card border border-secondary rounded">
+						<div class="card-body h-100 d-flex flex-column justify-content-center">
+							<div class="card-title text-success text-center h2 mb-0">150+</div>
+						<h6 class="card-text text-center">YouTube Videos</h6>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6 col-md-4 col-lg-6 order-lg-4 order-md-3">
+				<div class="card border border-secondary rounded">
+					<img src="/images/landing/homepage/support3.webp" class="card-img-top rounded" style="object-fit: cover;">
+				</div>
+			</div>
+
+			<div class="col-6 col-md-4 col-lg-6 order-lg-5 order-md-5">
+				<div class="card border border-secondary rounded">
+					<img src="/images/landing/homepage/support2.webp" class="card-img-top rounded" style="object-fit: cover;">
+				</div>
+			</div>
+
+			<div class="col-6 col-md-4 col-lg-6 order-lg-6 order-md-6">
+				<div class="card border border-secondary rounded">
+						<div class="card-body h-100 d-flex flex-column justify-content-center">
+							<div class="card-title text-success text-center h2 mb-0">136+</div>
+						<h6 class="card-text text-center">Help Articles</h6>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="order-1 order-lg-2 scroll-animation delay-200 w-100 px-2 px-md-5 mb-0 pt-4">
+
+			<div class="d-flex justify-content-center justify-content-md-start my-4 scroll-animation">
+				<div class="badge-rounded px-5">
+					<div class="badge-text"><i class="far fa-user-headset mr-2"></i>Customer Service</div>
+				</div>
+			</div>
+
+			<!-- <div class="d-flex flex-row mb-4" style="height:100px;">
+				<img class="mx-3" src="/images/landing/homepage/3e433639-afd1-4096-ada5-7b7a08d5d063.webp" alt="">
+				<img class="mx-3" src="/images/landing/homepage/3b2f3e64-937c-427b-a575-efb2e266525e.webp" alt="">
+				<img class="mx-3" src="/images/landing/homepage/c8da1cbc-067b-43f0-bd0e-aedd9c66d88a.webp" alt="">
+			</div> -->
+
+			<h2 class="h2 text-success">Our support is unmatched.</h2>
+			<h3 class="text-charcoal mb-4">
+				Our people make the difference. Get help when you need it from a team that is second to none.
+			</h3>
+
+			<div class="badge-rounded small pl-3 pr-4 mb-3">
+				<i class="fas fa-check-circle text-success"></i>
+				<div class="badge-text">Phone, ticket, and email support</div>
+			</div>
+
+			<div class="badge-rounded small pl-3 pr-4 mb-3">
+				<i class="fas fa-check-circle text-success"></i>
+				<div class="badge-text">Free import of your people data</div>
+			</div>
+
+			<div class="badge-rounded small pl-3 pr-4 mb-3">
+				<i class="fas fa-check-circle text-success"></i>
+				<div class="badge-text">Weekly livestreams and workshops</div>
+			</div>
+
+			<div class="badge-rounded small pl-3 pr-4 mb-3">
+				<i class="fas fa-check-circle text-success"></i>
+				<div class="badge-text">White glove setup service available</div>
+			</div>
+
+			<div class="badge-rounded small pl-3 pr-4 mb-3">
+				<i class="fas fa-check-circle text-success"></i>
+				<div class="badge-text">US-based support agents</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</section>
+
+<section class="pt-5 container">
+
+	<div class="d-flex justify-content-center my-4 scroll-animation">
+		<div class="badge-rounded px-5">
+			<div class="badge-text"><i class="far fa-award mr-2"></i>Awards & Accolades</div>
+		</div>
+	</div>
+
+	<h2 class="mt-4 mb-2 text-center text-success rotating-text scroll-animation">What people think about us</h2>
+
+	<h4 class="scroll-animation text-center text-charcoal mb-3">
+		Reviewed by hundreds of churches and ministries,<br/>
+		no other <strong>church management software</strong> comes close.
+	</h4>
+
+
+	<div class="d-flex mt-2 align-items-center justify-content-center mb-5">
+					<i class="fas fa-star" style="color: #FFD700;"></i>
+					<i class="fas fa-star" style="color: #FFD700;"></i>
+					<i class="fas fa-star" style="color: #FFD700;"></i>
+					<i class="fas fa-star" style="color: #FFD700;"></i>
+					<i class="fas fa-star" style="color: #FFD700;"></i>
+				<h6 class="ml-2 mt-1 text-charcoal">750+ 5-star Capterra reviews</h6>
+	</div>
+	<div class="d-flex mt-2 align-items-center justify-content-center mt-4 mb-5 pb-4">
+		<img class="mx-2" src="/images/landing/homepage/cb81595a-f5e7-4813-9ab3-7cb0ec5b2160.webp" alt="" style="width:9%;">
+		<img class="mx-2" src="/images/landing/homepage/22fbb665-973d-45e6-b730-835b6bafafd9.webp" alt="" style="width:9%;">
+		<img class="mx-2" src="/images/landing/homepage/c8da1cbc-067b-43f0-bd0e-aedd9c66d88a.webp" alt="" style="width:9%;">
+		<img class="mx-2" src="/images/landing/homepage/192e7580-5ae0-4d25-b839-fa3406264a23.webp" alt="" style="width:9%;">
+		<img class="mx-2" src="/images/landing/homepage/2e1da2fe-3781-4350-9ebc-f78c5191538b.webp" alt="" style="width:9%;">
+		<img class="mx-2" src="/images/landing/homepage/getapp_ranked_1.webp" alt="" style="width:9%;">
+	</div>
+
+	<div class="container mt-5 infinite-vertical-scroll-container">
+		<div class="row">
+			<div class="col-md-4 vertical-scroller">
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"ChurchTrac is a Godsend!!! And, they have the BEST Customer Service of any Company I have ever experienced!"</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -80px -240px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Kimberly C</h6>
+									<p class="card-subtitle text-muted small">Church Clerk Secretary</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"ChurchTrac is the best thing ever! It's so affordable and it scales so easily!"</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -0 -80px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Ryan R</h6>
+									<p class="card-subtitle text-muted small">Lead Pastor</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"The site is very easy to use, templates are very useful and the staff was kind and willing to help with anything very quickly."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -400px -240px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Cynthia R</h6>
+									<p class="card-subtitle text-muted small">Data Clerk</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"All in one product. CT has everything needed to run the church."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -240px -0;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Margie M</h6>
+									<p class="card-subtitle text-muted small">Treasurer and Ministry Assistant</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"SIX STARS!! Not only is ChurchTrac user friendly for an individual with no finance or business background, but the support and response time is phenomenal."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -160px -0;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Rikki M</h6>
+									<p class="card-subtitle text-muted small">Treasurer</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"Awesome tool. Easy to manage, affordable, and good customer service."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -0 -400px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Alfredo B</h6>
+									<p class="card-subtitle text-muted small">Pastor</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"Makes this pastor's job so much easier!"</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -400px -320px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Corbin K</h6>
+									<p class="card-subtitle text-muted small">Senior Pastor</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"Easy to set up. Plans for ALL status and sizes of churches."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -80px -320px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Jeff C</h6>
+									<p class="card-subtitle text-muted small">Pastor, IT, AV</p>
+								</div>
+							</div>
+						</div>
+					</div>
+							</div>
+			<div class="col-md-4 vertical-scroller">
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"Complete Church Membership Tools for ALL Chuches. It has been an incredible journey for many years and we are still enjoying the honeymoon!"</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -320px -320px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">George S</h6>
+									<p class="card-subtitle text-muted small">Pastor</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"We highly recommend ChurchTrac to other churches seeking a reliable and user-friendly software solution."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -0 -160px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Rev Robert B</h6>
+									<p class="card-subtitle text-muted small">Financial Secretary</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"It is cost effective, simple to use and easy to onboard others; Church Connect was a game changer for our church."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -320px -80px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Jordan T</h6>
+									<p class="card-subtitle text-muted small">Pastor</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"Wonderful! I seriously recommend this software to just about every church leader I speak to."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -160px -80px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Rich B</h6>
+									<p class="card-subtitle text-muted small">Minister</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"I would highly recommend Churchtrac to churches who like having everything organized in one software. The people who represent the company are pleasant and knowledgeable, always ready to help."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -160px -240px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Kim S</h6>
+									<p class="card-subtitle text-muted small">Financial Secretary</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"Everything in one place and easy to use and cost is awesome"</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -80px -400px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Aida M</h6>
+									<p class="card-subtitle text-muted small">Pastor</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"ChurchTrac is an all in one program. I can log in and do 80% of my job in ChurchTrac."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -240px -80px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Lynn L</h6>
+									<p class="card-subtitle text-muted small">Ministry Assistant</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"I love the simplicity of the platform. I reviewed 3-4 other platforms, and this was the best."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -400px -80px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Denita R</h6>
+									<p class="card-subtitle text-muted small">Office Manager</p>
+								</div>
+							</div>
+						</div>
+					</div>
+							</div>
+			<div class="col-md-4 vertical-scroller">
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"I love it!! From the first time I opened it I fell in love with the simplicity of it."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -240px -240px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Katina M</h6>
+									<p class="card-subtitle text-muted small">Treasurer</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"Very helpful for structure of church and needs. Great Support Program… always advancing!"</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -320px -0;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Joyce C</h6>
+									<p class="card-subtitle text-muted small">Finance team</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"Their customer service is fabulous. They are very quick to answer any questions and help solve any problems you might encounter. The database is very comprehensive and for the most part easy to use."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -80px -80px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Roy H</h6>
+									<p class="card-subtitle text-muted small">Deacon</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"Having been the Administrative Pastor of a Houston area mega church using popular, sophisticated, well-known large church name brand software, I can say ChurchTrac has everything we need without all the complication. It doesn't take a team of people to keep it updated."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -240px -160px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Lowrey D</h6>
+									<p class="card-subtitle text-muted small">Administrative Assistant</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"ChurchTrac is always looking for ways to grow and consistently adds useful tools as well as ease of functionality."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -320px -160px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Joleen W</h6>
+									<p class="card-subtitle text-muted small">Church Treasurer</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"It is great to have software that grows with our growing needs."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -320px -240px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">JoAnna L</h6>
+									<p class="card-subtitle text-muted small">Administrative Assistant</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"No brainer choice for churches. ChurchTrac has streamlined the way we do many things."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -400px -0;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Gene R</h6>
+									<p class="card-subtitle text-muted small">Office Manager</p>
+								</div>
+							</div>
+						</div>
+					</div>
+									<div class="card border mb-4 testimony-card">
+						<div class="card-body">
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+															<i class="fas fa-star pb-2"></i>
+														<p class="card-text">"Best system for the money that we found."</p>
+							<div class="d-flex align-items-center">
+								<div class="quote-image position-relative" loading="lazy" style="background: url('/images/landing/homepage/testimony_sprites.png') -0 -240px;"></div>
+								<div class="mt-2 position-relative" style="left: -30px;">
+									<h6 class="card-subtitle bold mb-2">Larry H</h6>
+									<p class="card-subtitle text-muted small">Administrative Pastor</p>
+								</div>
+							</div>
+						</div>
+					</div>
+							</div>
+		</div>
+	</div>
+
+</section>
+
+<div class="container-fluid p-md-5 mt-5">
+
+	<div class="d-flex justify-content-center my-4 scroll-animation">
+		<div class="badge-rounded px-5">
+			<div class="badge-text"><i class="far fa-line-columns mr-2"></i>More Value</div>
+		</div>
+	</div>
+
+	<h2 class="mt-5x mb-2 text-center text-success scroll-animation">Why Choose ChurchTrac?</h2>
+	<h4 class="scroll-animation text-center text-charcoal mb-4">
+		ChurchTrac delivers more value and a better experience than any other church software.
+	</h4>
+
+	<div class="d-flex mx-auto flex-column flex-md-row align-items-start scroll-animation px-3" style="max-width: 1000px;">
+		<div class="w-100 pt-4">
+			<div class="text-center">
+				<img class="logo" style="width:255px; margin-bottom: 2px;" src="https://www.churchtrac.com/images/landing/ct-logo-color-lower.png" alt="ChurchTrac Logo">
+			</div>
+			<div class="card w-100 my-3" style="border-radius: 15px;">
+				<div class="card-body pb-1">
+					<ul id="ct" class="list-inline">
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-check text-primary mr-2"></i>Affordable all-included plans with no hidden fees</li>	
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-check text-primary mr-2"></i>Combines multiple apps into one simple platform</li>	
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-check text-primary mr-2"></i>Easy-to-use, even for tech-challenged volunteers</li>	
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-check text-primary mr-2"></i>Best-in-business support</li>	
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-check text-primary mr-2"></i>Weekly live training workshops</li>	
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-check text-primary mr-2"></i>Includes website, app, and member portal</li>	
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-check text-primary mr-2"></i>Trusted by thousands of churches since 2002</li>	
+												<li class="text-secondary p-2 "><i class="fas fa-check text-primary mr-2"></i>Weekly updates with regular new feature releases</li>	
+											</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="mx-4"></div>
+	
+		<div class="w-100 scroll-animation pt-4">
+			<h4 class="py-3 text-center text-muted">Other Products</h4>
+			<div class="card w-100 my-3" style="border-radius: 15px;">
+				<div class="card-body pb-1">
+					<ul id="others" class="list-inline">
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-times text-danger mr-2"></i>Expensive à la carte pricing for every feature</li>
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-times text-danger mr-2"></i>Missing features; additional integrations required</li>
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-times text-danger mr-2"></i>Complicated setup and steep learning curve</li>
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-times text-danger mr-2"></i>Poor customer support or limited availability</li>
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-times text-danger mr-2"></i>High online giving processing rates</li>
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-times text-danger mr-2"></i>Import and setup fees, hidden charges</li>
+												<li class="text-secondary p-2 border-bottom"><i class="fas fa-times text-danger mr-2"></i>Limited security protections for sensitive data</li>
+												<li class="text-secondary p-2 "><i class="fas fa-times text-danger mr-2"></i>Overwhelming or cluttered interfaces</li>
+											</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="scroll-animation">
+		<div class="text-center mx-auto">
+			<a href="/comparison">
+				<div class="btn-tangerine btn px-4 my-4" style="font-size: 1.1rem;">See more comparisons&nbsp;<i class="pl-2 fas fa-arrow-circle-right mt-1"></i></div>
+			</a>
+		</div>
+	</div>
+
+</div>
+<section class="container mt-3 py-5">
+
+	<div class="d-flex justify-content-center my-4 pb-4">
+		<div class="badge-rounded px-5">
+			<div class="badge-text"><i class="far fa-piggy-bank mr-2"></i>Pricing</div>
+		</div>
+	</div>
+
+	<div class="mt-3">
+		<h2 class="text-center text-success scroll-animation" style="font-size:4.5rem;">
+			Starting at <span class="text-white bg-primary px-3 highlight">$9/month</span>
+		</h2>
+		
+		<div class="d-flex justify-content-center">
+			<div class="row mt-5 mb-2 w-100" style="max-width: 1000px;">
+				<div class="col-md-6 scroll-animation">
+					<div class="card mb-4 border" style="border-radius: 15px;">
+						<h3 class="strong card-title bg-blue-medium py-3 pl-4 text-white rounded-top p-4" style="font-size: 2.0rem; border-radius: 15px 15px 0 0!important;">Standard Plan</h3>
+						<div class="card-body p-4 text-charcoal">
+							<h3 class="pl-3">As low as <span class="text-primary bold pl-1" style="font-size: 2.5rem;">$9</span>/month</h3>
+							<ul class="h6 mb-4" style="line-height:1.75rem;">
+								<li>Unlimited giving & pledges</li>
+								<li>Accept online donations</li>
+								<li>Unlimited attendance & check-ins</li>
+								<li>Automate reports and repetitive tasks </li>
+								<li>Church Connect (website and app)</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 scroll-animation">
+					<div class="card mb-4 border" style="border-radius: 15px;">
+						<h3 class="strong card-title bg-blue-dark py-3 pl-4 text-white rounded-top p-4" style="font-size: 2.0rem; border-radius: 15px 15px 0 0!important;">Plus Plan</h3>
+						<div class="card-body p-4 text-charcoal">
+							<h3 class="pl-3">As low as <span class="text-primary bold pl-1" style="font-size: 2.5rem;">$24</span>/month</h3>
+							<ul class="h6 mb-4" style="line-height:1.75rem;">
+								<li class="bold">Everything in the Standard Plan plus:</li>
+								<li>Manage finances</li>
+								<li>Bank syncing</li>
+								<li>Scheduling w/ SMS invites</li>
+								<li>Plan worship services</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="text-center pb-4 text-charcoal">
+			<h4 class="w-100 mb-3 bold text-muted">All plans include:</h4>
+			<div class="badge-container justify-content-center">
+				<div class="badge-squared">
+					<i class="fas fa-check-circle text-success"></i>
+					People Management
+				</div>
+				<div class="badge-squared">
+					<i class="fas fa-check-circle text-success"></i>
+					Reports
+				</div>
+				<div class="badge-squared">
+					<i class="fas fa-check-circle text-success"></i>
+					Human Support
+				</div>
+				<div class="badge-squared">
+					<i class="fas fa-check-circle text-success"></i>
+					Live Workshops
+				</div>
+			</div>
+		</div>
+
+		<div class="d-flex justify-content-center scroll-animation mt-2">
+			<a href="/pricing"><div class="btn-tangerine btn px-4 mb-5" style="font-size: 1.1rem;">Explore plans and pricing <i class="ml-2 fas fa-arrow-circle-right mt-1"></i></div></a>
+		</div>
+		
+	</div>
+
+</section>
+<section class="py-5 text-center px-4 bg-blue-dark">
+	<div class="card mx-auto scroll-animation py-5 my-5" style="border-radius: 15px; max-width: 1000px;">
+		<div class="card-body">
+			<h1>Ready to get started with the <span class="bold text-primary">best</span> church software?</h1>
+			<h3 class="py-2 text-charcoal">Join the thousands of other churches that have...</h3>
+			<a href="/signup" class="px-5 my-3 btn btn-tangerine" style="font-size: 1.1rem;">Start for free&nbsp;<i class="fas fa-arrow-circle-right mt-1"></i></a>
+		</div>
+	</div>
+</section>
+<!-- START FOOTER -->
+<footer id="footer">
+    <div class="bg-blue-very-dark pt-1">
+        <div class="container-fluid">
+            <div class="row p-5 text-white">
+
+                <!---LOGO--->
+                <div class="col-lg-4">
+                    <img class="logo" style="border:none;" src="/images/landing/ct_logo_text.png" width="225" alt="ChurchTrac Logo"></a>
+                    <p class="pt-3">
+                        Your All-In-One Church Software.
+                    </p>
+
+                    <div class="pt-3">
+                        <a href="https://www.facebook.com/ChurchTrac" target="_blank"><i class="fab fa-facebook-square fa-2x mx-2 text-white"></i><span class="sr-only">Facebook</span></a>
+                        <a href="https://www.twitter.com/ChurchTrac" target="_blank"><i class="fab fa-twitter-square fa-2x mx-2 text-white"></i><span class="sr-only">Twitter</span></a>
+                        <a href="https://www.pinterest.com/ChurchTrac" target="_blank"><i class="fab fa-pinterest-square fa-2x mx-2 text-white"></i><span class="sr-only">Pinterest</span></a>
+                        <a href="https://www.youtube.com/channel/UC0dQtQ1X6jAqHmoMxSr6GUw" target="_blank"><i class="fab fa-youtube-square fa-2x mx-2 text-white"></i><span class="sr-only">Youtube</span></a>
+                        <a href="https://www.vimeo.com/churchtrac" target="_blank"><i class="fab fa-vimeo-square fa-2x mx-2 text-white"></i><span class="sr-only">Vimeo</span></a>
+                    </div>
+
+                    <div class="mt-2">
+                        <a href="/" class="text-white small">Home</a> |
+                        <a href="/about_us" class="text-white small">Our Story</a> |
+                        <a href="/support" class="text-white small">Support</a> |
+                        <a href="/privacy_policy" class="text-white small">Privacy</a>
+                    </div>
+
+                </div>
+                
+                                        <!---RECENT POSTS--->
+                    <div class="col-lg-5 py-3 text-white">
+                        <h3 class="hrfoot">Recent Posts</h3>
+                        <ul class="list-unstyled pr-3">
+                                                        <li class="pb-2"><a href="/articles/facebook-pages-for-churches-build-community-and-share-the-gospel">Facebook Pages for Churches: Build Community and Share the Gospel</a></li>
+                                                        <li class="pb-2"><a href="/articles/when-facebook-comments-go-wrong-a-guide-for-church-leaders">When Facebook Comments Go Wrong: A Guide for Church Leaders</a></li>
+                                                        <li class="pb-2"><a href="/articles/facebook-analytics-for-churches-the-numbers-that-actually-matter">Facebook Analytics for Churches: The Numbers That Actually Matter</a></li>
+                                                        <li class="pb-2"><a href="/articles/how-to-use-your-church-facebook-page-to-love-your-neighborhood-(not-just-advertise-to-it)">How to Use Your Church Facebook Page to Love Your Neighborhood (Not Just Advertise to It)</a></li>
+                                                        <li class="pb-2"><a href="/articles/facebook-messenger-your-churchs-new-prayer-chain-revolution">Facebook Messenger: Your Church's New Prayer Chain Revolution</a></li>
+                                                        <li><a href="/articles/page/1">View more articles...</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!---QUICK LINKS--->
+                    <div class="col-lg-3 text-white py-3">
+                        <h3 class="hrfoot">Quick Links</h3>
+                        <a href="/">Home</a><br/>
+                        <a href="/about_us">Our Story</a><br/>
+                        <a href="/pricing">Pricing</a><br/>
+                        <a href="/comparison">How We Compare</a><br/>
+                        <a href="/signup">Sign Up</a><br/>
+                        <a href="/support">Support</a><br/>
+                        <a href="/articles/page/1">Blog</a><br/>
+						<a href="/support">Contact Us</a><br/>
+                    </div>
+
+                            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- END FOOTER -->
+		<!-- Google tag (gtag.js) -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-2TMPWDMBDL"></script>
+		<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-2TMPWDMBDL');
+		</script>
+		
+<script>
+
+// Get the current year for the copyright
+$('#year').text(new Date().getFullYear());
+
+setTimeout(function() {
+    $('.show-after-load').removeClass('show-after-load');
+
+}, 2000);
+
+function showVideo(video_id) {
+    var dialog = bootbox.dialog({
+        message: '<div class="embed-responsive embed-responsive-16by9"><iframe src="https://player.vimeo.com/video/'+video_id+'?autoplay=1&quality=720p" class="embed-responsive-item" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen allow="autoplay; fullscreen"></iframe></div>',
+        size:'large',
+        backdrop: true,
+        onEscape: true
+    });
+}
+
+</script>
+
+<!-- Meta Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '564857815504048');
+    fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=564857815504048&ev=PageView&noscript=1" /></noscript>
+<!-- End Meta Pixel Code -->
+
+<script type="text/javascript">
+
+$(function() {
+
+	// feature section tooltips
+  	$('[data-toggle="tooltip"]').tooltip();
+	$(document).on('click', 'a', function() {
+		$('[data-toggle="tooltip"]').tooltip('hide');
+	});
+
+	// landing hero
+	var landing_hero_img = $('.image-dissolve img');
+	let current_index = 0;
+
+	// initialize first hero image
+	landing_hero_img.eq(current_index).addClass('active');
+
+	function showNextImage() {
+		landing_hero_img.eq(current_index).removeClass('active');
+		current_index = (current_index + 1) % landing_hero_img.length;
+		landing_hero_img.eq(current_index).addClass('active');
+	}
+
+	// loop through images every five seconds
+	setInterval(showNextImage, 7000);
+
+	// used by scrolling quotes in testimony section
+	$('.vertical-scroller').each(function() {
+        var vertical_scroller_content = $(this);
+
+        // get the children of .vertical-scroller and clone them
+        vertical_scroller_content.children().each(function() {
+            var duplicatedItem = $(this).clone();
+            duplicatedItem.attr('aria-hidden', true);
+            vertical_scroller_content.append(duplicatedItem); // append after the original items
+        });
+    });
+
+});
+
+	// handle elements with scroll-animation class applied
+	class ScrollAnimator {
+		constructor() {
+			// Initialize intersection observer
+			this.observer = new IntersectionObserver(
+				(entries) => this.handleIntersection(entries),
+				{
+					root: null,
+					rootMargin: '-10% 0px', // Slightly delay the animation trigger
+					threshold: 0
+				}
+			);
+
+			// Track elements that are currently visible
+			this.visibleElements = new Set();
+
+			// Initialize
+			this.init();
+		}
+
+		init() {
+			// Observe all scroll-animation elements
+			document.querySelectorAll('.scroll-animation').forEach(element => {
+				this.observer.observe(element);
+			});
+		}
+
+		handleIntersection(entries) {
+			entries.forEach(entry => {
+				// Handle the animation state
+				if (entry.isIntersecting) {
+					entry.target.classList.add('show-element');
+					this.visibleElements.add(entry.target);
+				} else {
+					// Only remove the class if the element was previously visible
+					if (this.visibleElements.has(entry.target)) {
+						entry.target.classList.remove('show-element');
+						this.visibleElements.delete(entry.target);
+					}
+				}
+			});
+		}
+	}
+
+	// Initialize when DOM is loaded
+	document.addEventListener('DOMContentLoaded', () => {
+		new ScrollAnimator();
+	});
+
+	// detect older browsers that doesn't support webp
+	function checkWebPSupport() {
+
+		var img = new Image();
+       	img.onerror = function() {
+			alert('Please update your browser in order to view images on this page.') // webp not supported; add 'webp-unsupported' class to all images
+		};
+
+		img.src = '/images/landing/homepage/support1.webp'; // sample/test image for webp detection
+
+	}
+
+	checkWebPSupport();
+
+	var $scroll_wrapper = $('.card-scroll-wrapper');
+	var $card = $('.card-scroll');
+	var $left_arrow = $('#left-arrow');
+	var $right_arrow = $('#right-arrow');
+	let current_index = 0;
+
+	// function to check if we can scroll left or right
+	function updateArrowStates() {
+		var total_card_width = $scroll_wrapper[0].scrollWidth;  // total width of all cards
+		var visible_width = $scroll_wrapper[0].clientWidth;  // width of the visible area
+		var scroll_position = $scroll_wrapper.scrollLeft(); // current scroll position
+
+		// disable left arrow if we're at the beginning
+		if ( scroll_position === 0 ) {
+			$left_arrow.addClass('disabled');
+		} else {
+			$left_arrow.removeClass('disabled');
+		}
+
+		// disable right arrow if we're at the end
+		if ( scroll_position + visible_width >= total_card_width ) {
+			$right_arrow.addClass('disabled');
+		} else {
+			$right_arrow.removeClass('disabled');
+		}
+	}
+
+	// scroll to a specific card by index
+	function scrollToCard(index) {
+		if (index < 0 || index >= $card.length) return; // prevent out-of-bounds scrolling
+		current_index = index;
+
+		var $targetCard = $card.eq(index);
+		var cardOffset = $targetCard.position().left + $scroll_wrapper.scrollLeft();
+		
+		// scroll to the card by setting the scrollLeft value
+		$scroll_wrapper.scrollLeft(cardOffset);
+		updateArrowStates(); // update arrow states after scrolling
+	}
+
+	// handle left arrow click
+	$left_arrow.on('click', function () {
+		if (!$(this).hasClass('disabled')) {
+			if (current_index > 0) scrollToCard(current_index - 1);
+		}
+	});
+
+	// handle right arrow click
+	$right_arrow.on('click', function () {
+		if (!$(this).hasClass('disabled')) {
+			if (current_index < $card.length - 1) scrollToCard(current_index + 1);
+		}
+	});
+
+	// update arrow states initially
+	updateArrowStates();
+
+	// listen for scroll event to update arrow states if user scrolls manually
+	$scroll_wrapper.on('scroll', function () {
+		updateArrowStates();
+	});
+
+	// handle phrase flipping animation
+	var phrases = $('.phrase');
+	let index = 0;
+
+	setInterval(function () {
+		var currentPhrase = phrases.eq(index);
+		index = (index + 1) % phrases.length;
+		var nextPhrase = phrases.eq(index);
+
+		currentPhrase.removeClass('visible').addClass('fade-out');
+		nextPhrase.addClass('visible fade-in');
+
+		setTimeout(() => {
+			currentPhrase.removeClass('fade-out');
+			nextPhrase.removeClass('fade-in');
+		}, 250); // match duration with the CSS animation
+	}, 2000); // adjust interval to match desired rotation timing
+
+</script>
+
+</body>
+</html>
+
