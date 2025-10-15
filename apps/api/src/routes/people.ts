@@ -55,9 +55,20 @@ const personSchema = z.object({
 
 r.get('/persons', async (req, res) => {
   const q = String((req.query.q as string) || '')
-  const where = q
-    ? { $or: [{ firstName: { $regex: q, $options: 'i' } }, { lastName: { $regex: q, $options: 'i' } }, { email: { $regex: q, $options: 'i' } }] }
-    : {}
+  const tagAny = (req.query.tagAny as string | undefined)?.split(',').filter(Boolean)
+  const tagAll = (req.query.tagAll as string | undefined)?.split(',').filter(Boolean)
+  const tagNone = (req.query.tagNone as string | undefined)?.split(',').filter(Boolean)
+
+  const where: any = {}
+  if (q) where.$or = [
+    { firstName: { $regex: q, $options: 'i' } },
+    { lastName: { $regex: q, $options: 'i' } },
+    { email: { $regex: q, $options: 'i' } },
+  ]
+  if (tagAny?.length) where.tags = { ...(where.tags || {}), $in: tagAny }
+  if (tagAll?.length) where.tags = { ...(where.tags || {}), $all: tagAll }
+  if (tagNone?.length) where.tags = { ...(where.tags || {}), $nin: tagNone }
+
   const people = await Person.find(where).limit(200).lean()
   res.json({ items: people })
 })

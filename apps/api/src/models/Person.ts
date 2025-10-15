@@ -19,7 +19,7 @@ const personSchema = new Schema<IPerson>(
     lastName: { type: String, required: true, index: true },
     email: { type: String, index: true },
     phone: { type: String },
-    tags: { type: [String], default: [] },
+    tags: { type: [String], default: [], index: true },
     custom: { type: Schema.Types.Mixed, default: {} },
   },
   { timestamps: true }

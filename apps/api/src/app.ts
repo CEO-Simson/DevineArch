@@ -4,6 +4,8 @@ import createError from 'http-errors'
 import authRoutes from './routes/auth'
 import peopleRoutes from './routes/people'
 import givingRoutes from './routes/giving'
+import smartlistsRoutes from './routes/smartlists'
+import reportsRoutes from './routes/reports'
 import { env } from './config/env'
 import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
@@ -29,6 +31,8 @@ app.get('/healthz', (_req, res) => res.json({ ok: true }))
 app.use('/api/auth', authRoutes)
 app.use('/api/people', peopleRoutes)
 app.use('/api/giving', givingRoutes)
+app.use('/api/smartlists', smartlistsRoutes)
+app.use('/api/reports', reportsRoutes)
 
 app.use((_req, _res, next) => next(createError(404)))
 app.use((err: any, _req: any, res: any, _next: any) => {

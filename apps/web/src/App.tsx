@@ -1,5 +1,9 @@
 import { useMutation } from '@tanstack/react-query'
-import { api, setAuthToken, authHeaders } from './api/client'
+import { api, setAuthToken } from './api/client'
+import { AuthProvider, useAuth } from './hooks/useAuth'
+import PeoplePage from './pages/PeoplePage'
+import GivingPage from './pages/GivingPage'
+import ReportsPage from './pages/ReportsPage'
 
 function Login() {
   const register = useMutation({
@@ -45,25 +49,53 @@ function Login() {
   )
 }
 
-export default function App() {
+function Shell() {
+  const { token, logout } = useAuth()
+  const [route, setRoute] = ((): [string, (s: string) => void] => {
+    const get = () => (location.hash?.slice(1) || 'people')
+    const set = (s: string) => { location.hash = s }
+    return [get(), set]
+  })()
+
   return (
     <div className="min-h-dvh bg-neutral-50 dark:bg-black text-neutral-900 dark:text-neutral-100">
       <header className="border-b border-neutral-200/70 dark:border-neutral-800">
         <div className="container-px mx-auto flex h-14 items-center justify-between">
           <div className="font-semibold">TIMA</div>
-          <nav className="hidden sm:flex gap-6 text-sm text-neutral-600 dark:text-neutral-300">
-            <a className="hover:text-brand-600" href="#features">Features</a>
-            <a className="hover:text-brand-600" href="#pricing">Pricing</a>
-            <a className="hover:text-brand-600" href="#about">About</a>
+          <nav className="flex gap-4 text-sm text-neutral-600 dark:text-neutral-300">
+            {token ? (
+              <>
+                <button className={`hover:text-brand-600 ${route==='people'?'text-brand-600 font-medium':''}`} onClick={() => setRoute('people')}>People</button>
+                <button className={`hover:text-brand-600 ${route==='giving'?'text-brand-600 font-medium':''}`} onClick={() => setRoute('giving')}>Giving</button>
+                <button className={`hover:text-brand-600 ${route==='reports'?'text-brand-600 font-medium':''}`} onClick={() => setRoute('reports')}>Reports</button>
+                <button className="ml-4 hover:text-brand-600" onClick={logout}>Logout</button>
+              </>
+            ) : null}
           </nav>
         </div>
       </header>
 
-      <main className="container-px mx-auto py-10 grid place-items-center">
-        <Login />
+      <main className="container-px mx-auto py-10 grid">
+        {!token ? (
+          <div className="place-self-center"><Login /></div>
+        ) : route === 'people' ? (
+          <PeoplePage />
+        ) : route === 'giving' ? (
+          <GivingPage />
+        ) : (
+          <ReportsPage />
+        )}
       </main>
 
       <footer className="py-10 text-center text-sm text-neutral-500">© {new Date().getFullYear()} TIMA</footer>
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <Shell />
+    </AuthProvider>
   )
 }
