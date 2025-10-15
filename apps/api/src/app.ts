@@ -4,10 +4,12 @@ import morgan from 'morgan'
 import createError from 'http-errors'
 import authRoutes from './routes/auth'
 import { env } from './config/env'
+import helmet from 'helmet'
 
 const app = express()
 
 app.use(express.json())
+app.use(helmet())
 app.use(cors({ origin: env.CORS_ORIGIN || true }))
 app.use(morgan('dev'))
 
