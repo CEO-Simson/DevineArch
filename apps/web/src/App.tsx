@@ -10,6 +10,7 @@ import MarketingHomePage from './pages/marketing/HomePage'
 import MarketingFeaturesPage from './pages/marketing/FeaturesPage'
 import MarketingPricingPage from './pages/marketing/PricingPage'
 import MarketingStoryPage from './pages/marketing/StoryPage'
+import BillingPage from './pages/BillingPage'
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
           <Route path="/app/people" element={<PeoplePage />} />
           <Route path="/app/giving" element={<GivingPage />} />
           <Route path="/app/reports" element={<ReportsPage />} />
+          <Route path="/app/billing" element={<BillingPage />} />
         </Route>
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />

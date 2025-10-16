@@ -14,8 +14,11 @@ router.use(requireAuth)
 const createPaymentSchema = z.object({
   type: z.enum(['superadmin', 'additional_admin']),
   quantity: z.number().int().min(1).optional(), // For additional admin seats
-  paymentMethod: z.enum(['card', 'upi', 'netbanking', 'wallet']),
+  paymentMethod: z.enum(['upi', 'card', 'netbanking', 'imps', 'wallet']),
   transactionId: z.string().min(1),
+  upiId: z.string().optional(), // e.g., name@bank
+  bank: z.string().optional(), // for netbanking
+  provider: z.enum(['razorpay']).default('razorpay'),
 });
 
 const confirmPaymentSchema = z.object({
@@ -86,6 +89,50 @@ router.get('/active', async (req: AuthedRequest, res) => {
     res.status(500).json({ error: 'Failed to fetch active subscription' })
   }
 });
+
+// GET /api/subscriptions/status - active | grace | expired with days
+router.get('/status', async (req: AuthedRequest, res) => {
+  try {
+    const user = await User.findById(req.user!.id)
+    if (!user?.organizationId) return res.status(400).json({ error: 'User is not associated with any organization' })
+
+    const organization = await Organization.findById(user.organizationId)
+    if (!organization) return res.status(404).json({ error: 'Organization not found' })
+
+    const now = new Date()
+    const end = new Date(organization.subscription.endDate)
+    const msPerDay = 1000 * 60 * 60 * 24
+    const diffDays = Math.ceil((end.getTime() - now.getTime()) / msPerDay)
+    const graceDays = 30
+
+    let state: 'active' | 'grace' | 'expired'
+    let daysRemaining: number | undefined
+    let daysPastDue: number | undefined
+
+    if (diffDays >= 0 && organization.subscription.status === 'active') {
+      state = 'active'
+      daysRemaining = diffDays
+    } else if (diffDays < 0 && Math.abs(diffDays) <= graceDays) {
+      state = 'grace'
+      daysPastDue = Math.abs(diffDays)
+    } else {
+      state = 'expired'
+      daysPastDue = Math.abs(diffDays)
+    }
+
+    res.json({
+      state,
+      daysRemaining,
+      daysPastDue,
+      graceDays,
+      subscriptionEndDate: organization.subscription.endDate,
+      autoRenew: organization.subscription.autoRenew,
+    })
+  } catch (error) {
+    console.error('Error fetching subscription status:', error)
+    res.status(500).json({ error: 'Failed to fetch subscription status' })
+  }
+})
 
 // GET /api/subscriptions/pricing - Get pricing information
 router.get('/pricing', async (_req, res) => {
@@ -180,13 +227,20 @@ router.post('/initiate', async (req: AuthedRequest, res) => {
   await subscription.save()
 
     res.status(201).json({
-      message: 'Payment initiated successfully',
-      subscription,
-      paymentDetails: {
-        amount,
-        currency: 'INR',
-        transactionId: data.transactionId,
-      },
+          message: 'Payment initiated successfully',
+          subscription,
+          paymentIntent: {
+            provider: data.provider,
+            method: data.paymentMethod,
+            amount,
+            currency: 'INR',
+            transactionId: data.transactionId,
+            upiId: data.upiId,
+            bank: data.bank,
+            // In a real integration, include Razorpay order_id/redirect URL/QR payload
+            redirectUrl: data.paymentMethod === 'card' || data.paymentMethod === 'netbanking' ? 'https://checkout.razorpay.com/v1/checkout.js' : undefined,
+            upiQrData: data.paymentMethod === 'upi' ? 'upi://pay?pa=demo@bank&am=' + amount : undefined,
+          },
     })
   } catch (error) {
     if (error instanceof z.ZodError) {
