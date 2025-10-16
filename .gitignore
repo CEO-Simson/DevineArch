@@ -61,6 +61,7 @@ temp/
 # Stray files on Windows
 nul
 .claude/
+src/
 
 # MongoDB data (local development)
 .mongo-data/

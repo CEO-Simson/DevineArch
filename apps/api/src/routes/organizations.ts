@@ -1,9 +1,9 @@
 import { Router } from 'express'
 import { z } from 'zod'
-import { requireAuth, AuthedRequest } from '../middleware/auth'
-import { Organization } from '../models/Organization'
-import { Subscription, SUBSCRIPTION_PRICING } from '../models/Subscription'
-import { User } from '../models/User'
+import { requireAuth, AuthedRequest } from '../middleware/auth.js'
+import { Organization } from '../models/Organization.js'
+import { Subscription, SUBSCRIPTION_PRICING } from '../models/Subscription.js'
+import { User } from '../models/User.js'
 
 const router = Router()
 

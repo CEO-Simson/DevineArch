@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../models/user.dart';
@@ -34,12 +35,12 @@ class AuthProvider with ChangeNotifier {
 
         if (userJson != null) {
           _user = User.fromJson(Map<String, dynamic>.from(
-              const JsonDecoder().convert(userJson) as Map));
+              jsonDecode(userJson) as Map));
         }
 
         if (orgJson != null) {
           _organization = Organization.fromJson(Map<String, dynamic>.from(
-              const JsonDecoder().convert(orgJson) as Map));
+              jsonDecode(orgJson) as Map));
         }
 
         notifyListeners();
@@ -51,9 +52,9 @@ class AuthProvider with ChangeNotifier {
 
   Future<void> _storeAuth(String token, User user, Organization? org) async {
     await _storage.write(key: 'auth_token', value: token);
-    await _storage.write(key: 'user', value: const JsonEncoder().convert(user.toJson()));
+    await _storage.write(key: 'user', value: jsonEncode(user.toJson()));
     if (org != null) {
-      await _storage.write(key: 'organization', value: const JsonEncoder().convert(org.toJson()));
+      await _storage.write(key: 'organization', value: jsonEncode(org.toJson()));
     }
   }
 

@@ -50,7 +50,7 @@ class HomeScreen extends StatelessWidget {
                         const SizedBox(height: 8),
                         if (organization != null)
                           Text(
-                            '${organization.name}',
+                            organization.name,
                             style: const TextStyle(
                               fontSize: 16,
                               color: Colors.grey,

@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/user.dart';
-import '../models/organization.dart';
 
 class ApiService {
   // TODO: Update this to your actual API URL
