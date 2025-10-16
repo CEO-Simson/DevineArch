@@ -1,11 +1,13 @@
 import { Router } from 'express'
 import { z } from 'zod'
-import { SmartList } from '../models/SmartList'
-import { Person } from '../models/Person'
-import { requireAuth } from '../middleware/auth'
+import { SmartList } from "../models/SmartList.js"
+import { Person } from "../models/Person.js"
+import { requireAuth } from "../middleware/auth.js"
+import { requireActiveOrGrace } from '../middleware/enforce'
 
 const r = Router()
 r.use(requireAuth)
+r.use(requireActiveOrGrace)
 
 const criteriaSchema = z.object({
   q: z.string().optional(),

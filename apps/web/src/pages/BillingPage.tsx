@@ -1,13 +1,22 @@
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { api } from '../api/client'
+import { PaymentMethod } from '../lib/payments'
 
 export default function BillingPage() {
   const status = useQuery({ queryKey: ['subscription-status'], queryFn: () => api<any>('/api/subscriptions/status') })
   const pricing = useQuery({ queryKey: ['pricing'], queryFn: () => api<any>('/api/subscriptions/pricing') })
 
   const initiate = useMutation({
-    mutationFn: (data: { type: 'superadmin'|'additional_admin'; paymentMethod: 'upi'|'card'|'netbanking'|'imps'|'wallet'; transactionId: string; upiId?: string; bank?: string }) =>
-      api<any>('/api/subscriptions/initiate', { method: 'POST', body: JSON.stringify(data) }),
+    mutationFn: async (data: { type: 'superadmin'|'additional_admin'; paymentMethod: PaymentMethod; transactionId: string; upiId?: string; bank?: string }) => {
+      const result = await api<any>('/api/subscriptions/initiate', { method: 'POST', body: JSON.stringify(data) })
+      // For card/netbanking, create a Razorpay order too
+      if (data.paymentMethod === 'card' || data.paymentMethod === 'netbanking') {
+        const amount = pricing.data?.pricing?.superadmin?.amount || 0
+        const order = await api<any>('/api/payments/razorpay/order', { method: 'POST', body: JSON.stringify({ amount, currency: 'INR' }) })
+        return { ...result, razorpay: order }
+      }
+      return result
+    },
   })
 
   return (
@@ -54,8 +63,14 @@ export default function BillingPage() {
             <div>Provider: {initiate.data.paymentIntent?.provider}</div>
             <div>Method: {initiate.data.paymentIntent?.method}</div>
             {initiate.data.paymentIntent?.upiQrData ? <div className="mt-2">UPI QR: <code className="text-xs">{initiate.data.paymentIntent.upiQrData}</code></div> : null}
-            {initiate.data.paymentIntent?.redirectUrl ? (
+            {initiate.data.paymentIntent?.redirectUrl || initiate.data.razorpay ? (
               <div className="mt-2"><a className="underline" href={initiate.data.paymentIntent.redirectUrl} target="_blank" rel="noreferrer">Proceed to checkout</a></div>
+            ) : null}
+            {initiate.data.razorpay ? (
+              <div className="mt-2 text-sm">
+                <div>Razorpay Order: <code className="text-xs">{initiate.data.razorpay.order?.id}</code></div>
+                <div>Key: <code className="text-xs">{initiate.data.razorpay.key}</code></div>
+              </div>
             ) : null}
           </div>
         ) : null}

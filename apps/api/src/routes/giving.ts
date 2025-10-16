@@ -1,11 +1,11 @@
 import { Router } from 'express'
 import { z } from 'zod'
-import { requireAuth } from '../middleware/auth'
-import { Fund } from '../models/Fund'
-import { Pledge } from '../models/Pledge'
-import { Donation } from '../models/Donation'
-import { Batch } from '../models/Batch'
-import { Deposit } from '../models/Deposit'
+import { requireAuth } from '../middleware/auth.js'
+import { Fund } from '../models/Fund.js'
+import { Pledge } from '../models/Pledge.js'
+import { Donation } from '../models/Donation.js'
+import { Batch } from '../models/Batch.js'
+import { Deposit } from '../models/Deposit.js'
 
 const r = Router()
 r.use(requireAuth)

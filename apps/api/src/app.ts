@@ -1,19 +1,19 @@
 import express from 'express'
 import pinoHttp from 'pino-http'
 import createError from 'http-errors'
-import authRoutes from './routes/auth'
-import peopleRoutes from './routes/people'
-import givingRoutes from './routes/giving'
-import smartlistsRoutes from './routes/smartlists'
-import reportsRoutes from './routes/reports'
-import { organizationsRouter } from './routes/organizations'
-import { subscriptionsRouter } from './routes/subscriptions'
-import { invitesRouter } from './routes/invites'
-import { env } from './config/env'
+import authRoutes from './routes/auth.js'
+import peopleRoutes from './routes/people.js'
+import givingRoutes from './routes/giving.js'
+import smartlistsRoutes from './routes/smartlists.js'
+import reportsRoutes from './routes/reports.js'
+import { organizationsRouter } from './routes/organizations.js'
+import { subscriptionsRouter } from './routes/subscriptions.js'
+import { invitesRouter } from './routes/invites.js'
 import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
-import { buildCors } from './config/cors'
-import { logger } from './config/log'
+import { buildCors } from './config/cors.js'
+import { logger } from './config/log.js'
+import { razorpayPaymentsRouter } from './routes/payments.razorpay'
 
 const app = express()
 
@@ -32,6 +32,8 @@ app.use(pinoHttp({ logger }))
 
 app.get('/healthz', (_req, res) => res.json({ ok: true }))
 app.use('/api/auth', authRoutes)
+app.use('/api/payments/razorpay', express.json({ type: '*/*' }), razorpayPaymentsRouter)
+app.use('/api/payments/razorpay', express.json({ type: '*/*' }), razorpayPaymentsRouter)
 app.use('/api/organizations', organizationsRouter)
 app.use('/api/subscriptions', subscriptionsRouter)
 app.use('/api/invites', invitesRouter)

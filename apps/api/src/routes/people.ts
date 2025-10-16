@@ -1,10 +1,10 @@
 import { Router } from 'express'
 import { z } from 'zod'
-import { Household } from '../models/Household'
-import { Person } from '../models/Person'
-import { Group } from '../models/Group'
-import { Attendance } from '../models/Attendance'
-import { requireAuth } from '../middleware/auth'
+import { Household } from '../models/Household.js'
+import { Person } from '../models/Person.js'
+import { Group } from '../models/Group.js'
+import { Attendance } from '../models/Attendance.js'
+import { requireAuth } from '../middleware/auth.js'
 
 const r = Router()
 r.use(requireAuth)

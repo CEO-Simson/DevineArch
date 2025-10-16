@@ -1,14 +1,16 @@
 import { Router } from 'express'
 import { z } from 'zod'
-import { requireAuth } from '../middleware/auth'
-import { Donation } from '../models/Donation'
-import { Fund } from '../models/Fund'
-import { Attendance } from '../models/Attendance'
-import { Person } from '../models/Person'
-import { Household } from '../models/Household'
+import { requireAuth } from "../middleware/auth.js"
+import { requireActiveOrGrace } from '../middleware/enforce'
+import { Donation } from "../models/Donation.js"
+import { Fund } from "../models/Fund.js"
+import { Attendance } from "../models/Attendance.js"
+import { Person } from "../models/Person.js"
+import { Household } from "../models/Household.js"
 
 const r = Router()
 r.use(requireAuth)
+r.use(requireActiveOrGrace)
 
 // Giving summary by fund
 r.get('/giving/summary', async (req, res, next) => {

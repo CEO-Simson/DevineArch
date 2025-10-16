@@ -35,6 +35,9 @@ export function AppLayout() {
                 {link.label}
               </NavLink>
             ))}
+            {status.data && status.data.state !== 'active' ? (
+              <NavLink to="/app/billing" className={({isActive}) => `hover:text-brand-600 ${isActive ? 'text-brand-600 font-semibold' : ''}`}>Billing</NavLink>
+            ) : null}
             <button className="text-sm hover:text-brand-600" onClick={logout}>
               Logout
             </button>
