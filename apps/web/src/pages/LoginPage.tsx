@@ -8,7 +8,7 @@ export default function LoginPage() {
   const navigate = useNavigate()
   const location = useLocation()
   const auth = useAuth()
-  const from = (location.state as { from?: Location })?.from?.pathname || '/people'
+  const from = (location.state as { from?: Location })?.from?.pathname || '/app/people'
 
   const register = useMutation({
     mutationFn: (data: { email: string; name: string; password: string }) =>

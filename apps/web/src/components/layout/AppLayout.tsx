@@ -2,24 +2,26 @@ import { NavLink, Outlet } from 'react-router-dom'
 import { useAuth } from '../../hooks/useAuth'
 
 const navLinks = [
-  { to: '/people', label: 'People' },
-  { to: '/giving', label: 'Giving' },
-  { to: '/reports', label: 'Reports' },
+  { to: '/app/people', label: 'People' },
+  { to: '/app/giving', label: 'Giving' },
+  { to: '/app/reports', label: 'Reports' },
 ]
 
 export function AppLayout() {
   const { logout } = useAuth()
   return (
-    <div className="min-h-dvh">
+    <div className="min-h-dvh flex flex-col bg-neutral-50 dark:bg-neutral-950">
       <header className="border-b border-neutral-200/70 dark:border-neutral-800 bg-white/80 dark:bg-neutral-950/70 backdrop-blur">
         <div className="container-px mx-auto flex h-14 items-center justify-between">
-          <div className="font-semibold tracking-tight">TIMA</div>
+          <NavLink to="/app/people" className="font-semibold tracking-tight text-brand-700">
+            TIMA Admin
+          </NavLink>
           <nav className="flex items-center gap-6 text-sm text-neutral-600 dark:text-neutral-300">
             {navLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
-                className={({ isActive }) =>
+                className={({ isActive }: { isActive: boolean }) =>
                   `hover:text-brand-600 transition-colors ${isActive ? 'text-brand-600 font-semibold' : ''}`
                 }
               >
@@ -33,12 +35,12 @@ export function AppLayout() {
         </div>
       </header>
 
-      <main className="container-px mx-auto py-10">
+      <main className="container-px mx-auto py-10 flex-1">
         <Outlet />
       </main>
 
       <footer className="py-10 text-center text-sm text-neutral-500">
-        © {new Date().getFullYear()} TIMA
+        © {new Date().getFullYear()} TIMA Church OS
       </footer>
     </div>
   )

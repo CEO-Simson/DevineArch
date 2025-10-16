@@ -30,6 +30,9 @@ package-lock.json
 .env.*
 !.env.example
 
+# Build artifacts
+*.tsbuildinfo
+
 # Python
 __pycache__/
 *.py[cod]
