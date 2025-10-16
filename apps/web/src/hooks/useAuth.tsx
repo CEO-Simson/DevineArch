@@ -3,10 +3,11 @@ import { getToken, setAuthToken } from '../api/client'
 
 type AuthContextValue = {
   token: string | null
+  login: (token: string) => void
   logout: () => void
 }
 
-const AuthContext = createContext<AuthContextValue>({ token: null, logout: () => {} })
+const AuthContext = createContext<AuthContextValue>({ token: null, login: () => {}, logout: () => {} })
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [token, setToken] = useState<string | null>(getToken())
@@ -15,11 +16,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     window.addEventListener('storage', onStorage)
     return () => window.removeEventListener('storage', onStorage)
   }, [])
-  return (
-    <AuthContext.Provider value={{ token, logout: () => { setAuthToken(undefined); setToken(null) } }}>
-      {children}
-    </AuthContext.Provider>
-  )
+  const login = (value: string) => {
+    setAuthToken(value)
+    setToken(value)
+  }
+  const logout = () => {
+    setAuthToken(undefined)
+    setToken(null)
+  }
+  return <AuthContext.Provider value={{ token, login, logout }}>{children}</AuthContext.Provider>
 }
 
 export function useAuth() {

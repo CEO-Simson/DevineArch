@@ -86,6 +86,18 @@ r.post('/donations', async (req, res) => {
   res.status(201).json(item)
 })
 
+r.put('/donations/:id', async (req, res) => {
+  const data = donationSchema.parse(req.body)
+  const item = await Donation.findByIdAndUpdate(req.params.id, data, { new: true })
+  if (!item) return res.status(404).json({ error: 'Not found' })
+  res.json(item)
+})
+
+r.delete('/donations/:id', async (req, res) => {
+  await Donation.findByIdAndDelete(req.params.id)
+  res.status(204).end()
+})
+
 // Batches
 const batchSchema = z.object({ date: z.coerce.date(), notes: z.string().optional() })
 
