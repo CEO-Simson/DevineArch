@@ -17,6 +17,13 @@ export default {
           700: '#0b52b3',
           800: '#0d458d',
           900: '#103a72'
+        },
+        liturgical: {
+          gold: '#D4AF37',
+          burgundy: '#6B1A28',
+          purple: '#5B2A86',
+          sarum: '#274380',
+          cream: '#F8F5EF'
         }
       }
     }
