@@ -6,6 +6,9 @@ import peopleRoutes from './routes/people'
 import givingRoutes from './routes/giving'
 import smartlistsRoutes from './routes/smartlists'
 import reportsRoutes from './routes/reports'
+import { organizationsRouter } from './routes/organizations'
+import { subscriptionsRouter } from './routes/subscriptions'
+import { invitesRouter } from './routes/invites'
 import { env } from './config/env'
 import helmet from 'helmet'
 import rateLimit from 'express-rate-limit'
@@ -29,6 +32,9 @@ app.use(pinoHttp({ logger }))
 
 app.get('/healthz', (_req, res) => res.json({ ok: true }))
 app.use('/api/auth', authRoutes)
+app.use('/api/organizations', organizationsRouter)
+app.use('/api/subscriptions', subscriptionsRouter)
+app.use('/api/invites', invitesRouter)
 app.use('/api/people', peopleRoutes)
 app.use('/api/giving', givingRoutes)
 app.use('/api/smartlists', smartlistsRoutes)
