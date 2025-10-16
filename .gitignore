@@ -57,3 +57,45 @@ coverage/
 .cache/
 tmp/
 temp/
+
+# Stray files on Windows
+nul
+.claude/
+
+# MongoDB data (local development)
+.mongo-data/
+.logs/
+
+# Flutter/Dart
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/Flutter.framework
+**/ios/Flutter/Flutter.podspec
+**/ios/Flutter/Generated.xcconfig
+**/ios/Flutter/app.flx
+**/ios/Flutter/app.zip
+**/ios/Flutter/flutter_assets/
+**/ios/ServiceDefinitions.json
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/android/.gradle/
+**/android/captures/
+**/android/local.properties
+**/android/**/GeneratedPluginRegistrant.java
+**/android/key.properties
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/build/
+**/.dart_tool/
+**/.packages
+**/pubspec.lock
+**/generated_plugin_registrant.dart
+
+# VS Code settings (project-specific)
+.vscode/
+apps/*/.vscode/
+
+# Temporary/test files
+share.html
+postcss.config.cjs
+tailwind.config.cjs
+.stylelintrc.json
